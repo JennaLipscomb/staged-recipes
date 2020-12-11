@@ -19,9 +19,9 @@ requirements:
     - pip
   run:
     - python
-    - tensorflow
-    - tensorflow-datasets
-    - tensorflow-hub
+    - tensorflow >=1.5.2
+    - tensorflow-datasets  
+    - tensorflow-hub ==0.8.0
 
 test:
   imports:
