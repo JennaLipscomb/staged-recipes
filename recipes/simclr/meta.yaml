@@ -20,7 +20,9 @@ requirements:
   run:
     - python
     - tensorflow
-    - tensor
+    - tensorflow-datasets
+    - tensorflow-hub
+
 test:
   imports:
     - simclr
