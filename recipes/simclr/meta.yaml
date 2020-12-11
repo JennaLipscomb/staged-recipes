@@ -21,11 +21,8 @@ requirements:
     - python
 
 test:
-  source_files:
-    - 
   imports:
-    - simplejson
-    - simplejson.tests
+    - simclr
 
 about:
   home: https://github.com/simplejson/simplejson
