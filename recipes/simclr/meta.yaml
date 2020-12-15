@@ -15,13 +15,13 @@ build:
 
 requirements:
   host:
-    - python
+    - python  ==3.6
     - pip
   run:
-    - python 
-    - tensorflow 
-    - tensorflow-datasets  
-    - tensorflow-hub 
+    - python ==3.6
+    - tensorflow ==2.0
+    - tensorflow-datasets ==1.2.0 
+    - tensorflow-hub ==0.8.0
 
 test:
   imports:
