@@ -1,0 +1,38 @@
+{% set name = "mariadb" %}
+{% set version = "1.0.5" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/mariadb-{{ version }}.tar.gz
+  sha256: e639f98a881e9b25e446c564a8e52c6ef0bcf7abcf7d5a6749bc7ef5d36e504d
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python >=3.6
+  run:
+    - python >=3.6
+
+test:
+  imports:
+    - mariadb
+
+about:
+  home: https://www.github.com/mariadb-corporation/mariadb-connector-python
+  summary: Python MariaDB extension
+  license: LGPL-2.1
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - JennaLipscomb
+    - oblute
