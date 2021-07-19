@@ -1,0 +1,42 @@
+{% set name = "tensorflow-addons" %}
+{% set version = "0.13.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/tensorflow/addons/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 5a8c33ecef5a3daca7f6b27c4b4e3a2badfe55f55a13e97066ee2e03ef98fab0
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  requires:
+    - pip
+  commands:
+    - pip check
+
+about:
+  home: https://www.tensorflow.org/addons
+  home: https://github.com/simplejson/simplejson
+  license: Apache
+  license_family: Apache
+  license_file: LICENSE
+  summary: 'Simple, fast, extensible JSON encoder/decoder for Python'
+  description: TensorFlow Addons is a repository of contributions that conform to well-established API patterns, but implement new functionality not available in core TensorFlow.
+  doc_url: https://www.tensorflow.org/addons
+  dev_url: https://github.com/tensorflow/addons/tree/v0.13.0
+extra:
+  recipe-maintainers:
+    - JennaLipscomb
+    - mxr-conda
